@@ -1,0 +1,38 @@
+Enter the first integer: 6
+Enter the second integer: 3
+Enter a floating-point number: 2.1
+Enter a single character: e
+Enter a boolean value (true/false): false
+Enter your name: darshan
+Sum of 6 and 3 is: 9
+Difference between 6 and 3 is: 3
+Product of 6 and 3 is: 18
+Quotient of 6 / 3 is: 2.0 and remainder is: 0
+2.1 multiplied by 2 is: 4.2
+Square of 2.1 is: 4.4099994
+The next character after 'e' is: f
+The previous character before 'e' is: d
+The opposite of false is: true
+Was the original value true? No
+HELLO, DARSHAN!
+
+
+PS C:\java> java task
+Enter the first integer: 10
+Enter the second integer: 20
+Enter a floating-point number: 5.5
+Enter a single character: A
+Enter a boolean value (true/false): true 
+Enter your name: john
+Sum of 10 and 20 is: 30
+Difference between 10 and 20 is: -10
+Product of 10 and 20 is: 200
+Quotient of 10 / 20 is: 0.5 and remainder is: 10
+5.5 multiplied by 2 is: 11.0
+Square of 5.5 is: 30.25
+The next character after 'A' is: B
+The previous character before 'A' is: @
+The opposite of true is: false
+Was the original value true? Yes
+HELLO, JOHN!
+PS C:\java> 
