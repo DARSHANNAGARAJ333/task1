@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h2>My To-Do List</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <div class="mb-3">
+      <input formControlName="title" placeholder="Task Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <input formControlName="description" placeholder="Description (optional)" class="form-control" />
+    </div>
+    <button class="btn btn-success">Add Task</button>
+  </form>
+
+  <h4 class="mt-4">Pending Tasks</h4>
+<ul class="list-group">
+  <ng-container *ngFor="let task of tasks; let i = index">
+    <li class="list-group-item" *ngIf="!task.completed">
+      {{ task.title }} - {{ task.description }}
+      <button class="btn btn-sm btn-primary float-end" (click)="toggleComplete(task)">Complete</button>
+      <button class="btn btn-sm btn-danger float-end me-2" (click)="deleteTask(i)">Delete</button>
+    </li>
+  </ng-container>
+</ul>
+
+
+
+  <h4 class="mt-4">Completed Tasks</h4>
+  <ul class="list-group">
+  <ng-container *ngFor="let task of tasks">
+    <li class="list-group-item" *ngIf="task.completed">
+      <s>{{ task.title }}</s> - {{ task.description }}
+      <button class="btn btn-sm btn-warning float-end" (click)="toggleComplete(task)">Undo</button>
+    </li>
+  </ng-container>
+</ul>
+
+
+  <button class="btn btn-danger mt-4" (click)="logout()">Logout</button>
+</div>
