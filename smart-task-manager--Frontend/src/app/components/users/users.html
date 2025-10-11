@@ -1,0 +1,42 @@
+<div class="p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Admin: Manage Users</h2>
+    <button (click)="logout()" class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+  </div>
+
+  <div class="mb-4 p-4 bg-gray-100 rounded">
+    <h3 class="font-bold mb-2">Create New User</h3>
+    <input [(ngModel)]="newUser.fullName" placeholder="Full Name" class="border p-2 mr-2 rounded">
+    <input [(ngModel)]="newUser.email" placeholder="Email" class="border p-2 mr-2 rounded">
+    <input [(ngModel)]="newUser.password" placeholder="Password" type="password" class="border p-2 mr-2 rounded">
+    <button (click)="createUser()" class="bg-green-500 text-white px-4 py-2 rounded">Create</button>
+  </div>
+
+  <div *ngIf="error" class="text-red-500 mb-2">{{error}}</div>
+
+  <table class="w-full border-collapse border">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-2 py-1">ID</th>
+        <th class="border px-2 py-1">Name</th>
+        <th class="border px-2 py-1">Email</th>
+        <th class="border px-2 py-1">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="border px-2 py-1">{{user.id}}</td>
+        <td class="border px-2 py-1">
+          <input [(ngModel)]="user.fullName" class="border p-1 rounded w-full">
+        </td>
+        <td class="border px-2 py-1">
+          <input [(ngModel)]="user.email" class="border p-1 rounded w-full">
+        </td>
+        <td class="border px-2 py-1 space-x-2">
+          <button (click)="updateUser()" class="bg-blue-500 text-white px-2 py-1 rounded">Update</button>
+          <button (click)="deleteUser(user.id)" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

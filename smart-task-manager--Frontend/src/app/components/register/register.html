@@ -1,0 +1,13 @@
+<div class="flex justify-center items-center h-screen">
+  <div class="w-full max-w-sm p-6 bg-white shadow rounded">
+    <h2 class="text-2xl font-bold mb-4">Register</h2>
+    <form (ngSubmit)="register()">
+      <input [(ngModel)]="fullName" name="fullName" placeholder="Full Name" class="w-full mb-2 p-2 border rounded" required>
+      <input [(ngModel)]="email" name="email" placeholder="Email" class="w-full mb-2 p-2 border rounded" required>
+      <input [(ngModel)]="password" name="password" type="password" placeholder="Password" class="w-full mb-2 p-2 border rounded" required>
+      <button type="submit" class="w-full bg-green-500 text-white p-2 rounded">Register</button>
+    </form>
+    <p class="text-red-500 mt-2">{{error}}</p>
+    <p class="text-green-500 mt-2">{{success}}</p>
+  </div>
+</div>
